@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Exercice 3</title>
+
+<script language="JavaScript">
+   var tab="";
+function Ajout_tab() {
+
+    var tmp
+    var tmp1
+    
+    if (tab.length==0) {
+        tab +=document.getElementById("T").value;
+    }
+   else
+   {
+        tmp1=" " + document.getElementById("T").value;
+        tab +=tmp1;
+   }
+   document.getElementById("T").value="";
+   document.getElementById("Tab").innerHTML="Le Tableau : " + tab;
+   }
+
+
+   function Affiche_tab() {
+
+var tmp="";
+var tmp1;
+let som=0;
+
+const myArray = tab.split(" ");
+myArray.sort(function(a, b){return a-b});
+for (let i = 0; i < myArray.length; i++) {
+        som= som + Number(myArray[i]);
+        tmp+=" " + myArray[i];
+}
+document.getElementById("trie").innerHTML= " Trie : " + tmp;
+
+document.getElementById("min").innerHTML=" Min : " + myArray[0];
+
+document.getElementById("max").innerHTML= " Max : " + myArray[myArray.length-1];
+
+document.getElementById("Somme").innerHTML=" Somme : " + som ;
+
+tab="";
+}
+
+  </script>
+
+
+
+</head>
+<body>
+
+    <article>
+        <label> Ajouter Nombre: </label> <br>
+        <input type="number" width="300" id="T" onchange="Ajout_tab()"  name="vv" > <br><br>
+        <button name="OK" onclick="Ajout_tab()"> Ajouter </button><br><br>
+       
+
+        <button name="OK" onclick="Affiche_tab()"> Afficher </button><br><br>
+
+        <p id="Tab"> </p>
+        <p id="trie"> </p>
+        <p id="min"> </p>
+        <p id="max"> </p>
+        <p id="Somme"> </p>
+        
+        </article>
+
+</body>
+</html>

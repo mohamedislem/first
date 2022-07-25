@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Exercice 3</title>
+
+<script language="JavaScript">
+   
+function Nb_Occurence() {
+
+    var tmp
+    var tmp1
+    let i=0
+    let h=0
+    
+   tmp=document.getElementById("T").value;
+   tmp1=document.getElementById("M").value;
+   let l=tmp1.length;
+    while ((i > -1) && (i< tmp.length))
+    {
+            i=tmp.indexOf(tmp1, i);
+        if (i>-1) 
+        {
+            h++;
+            i=i+l;
+        }
+        document.getElementById("nb").innerHTML=h;
+        
+    }
+
+   }
+
+  </script>
+
+
+
+</head>
+<body>
+
+    <article>
+        <label> Texte: </label> <br>
+        <input type="texte" width="300" id="T"  name="vv" > <br>
+
+        <label> Mot: </label> <br>
+        <input type="Texte" id="M"  name="vv" > <br><br>
+
+        <button name="OK" onclick="Nb_Occurence()"> Nb Occurence </button><br>
+
+        <p id="nb"> </p>
+        </article>
+
+</body>
+</html>
